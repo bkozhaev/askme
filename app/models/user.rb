@@ -15,10 +15,14 @@ class User < ApplicationRecord
   validates_confirmation_of :password
   validates :email, format: { with: /.+@.+\..+/i }
   validates :username, length: { maximum: 40 }
-  validates :username, format: { with: /^[a-z0-9_]{1,40}$/}
+  validates :username, format: { with: /[a-z0-9_]/}
 
   before_save :encrypt_password
+  before_save :do_downcase
 
+  def do_downcase
+    self.username.downcase
+  end
 
   def encrypt_password
     if self.password.present?
