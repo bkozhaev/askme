@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :questions
 
   validates :email, :username, presence: true
-  validates :email, :username, uniqueness: true
+  validates :email, :username.downcase, uniqueness: true
 
   attr_accessor :password
 
@@ -18,7 +18,7 @@ class User < ApplicationRecord
   validates :username, format: { with: /[a-z0-9_]/}
 
   before_save :encrypt_password
-  before_save :do_downcase
+  before_validation :do_downcase
 
   def do_downcase
     self.username = self.username.downcase
