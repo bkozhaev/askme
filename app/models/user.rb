@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   validates_presence_of :password, on: :create
   validates_confirmation_of :password
-  validates :email, format: { with: /.+@.+\..+/i }
+  validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   validates :username, length: { maximum: 40 }
   validates :username, format: { with: /[a-z0-9_]/}
 
