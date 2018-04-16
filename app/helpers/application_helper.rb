@@ -9,11 +9,11 @@ module ApplicationHelper
 
   def sklonenie(number, krokodil, krokodila, krokodilov)
     if (number == nil | !number.is_a?(Numeric))
-      number	= 0
+      number = 0
     end
 
     ostatok = number % 10
-    ostatok_sto = number%100
+    ostatok_sto = number % 100
 
     if (ostatok_sto >= 11 && ostatok_sto <= 14)
       return krokodilov
