@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8"/>
-    <title>Хорошие вопросы</title>
-    <%= csrf_meta_tags %>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Хорошие вопросы</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
 
-  <body>
+<body>
 
-    <div class="header">
-      <div class="container">
-        <div class="header-logo">
-          <h1 class="header-title"><%= link_to "Хорошие вопросы", root_path %></h1>
-        </div>
+<div class="header">
+  <div class="container">
+    <% if flash.any? %>
+      <div class="content-wrapper buffer-both">
+        <% flash.each do |name, message| %>
+          <%= content_tag :div, message, class: "flash-#{name}" %>
+        <% end %>
       </div>
-    </div>
+    <% end %>
+  </div>
+  <div class="header-logo">
+    <h1 class="header-title"><%= link_to "Хорошие вопросы", root_path %></h1>
+  </div>
+</div>
 
-    <div class="content">
-      <%= yield %>
-    </div>
+<div class="content">
+  <%= yield %>
+</div>
 
-  </body>
+</body>
 </html>
