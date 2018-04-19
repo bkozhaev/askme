@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :load_question, only: [:edit, :update, :destroy]
   before_action :authorize_user, except: [:create]
   # GET /questions/1/edit
   def edit
@@ -8,11 +8,10 @@ class QuestionsController < ApplicationController
   # POST /questions
   def create
     @question = Question.new(question_params)
-
     if @question.save
       redirect_to user_path(@question.user), notice: 'Вопрос задан'
     else
-      render :new
+      render :edit
     end
   end
 
@@ -34,7 +33,7 @@ class QuestionsController < ApplicationController
 
   private
   # Use callbacks to share common setup or constraints between actions.
-  def set_question
+  def load_question
     @question = Question.find(params[:id])
   end
 
@@ -44,6 +43,11 @@ class QuestionsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def question_params
-    params.require(:question).permit(:user_id, :text, :answer)
+    if current_user.present? &&
+        params[:question][:user_id].to_i == current_user.id
+      params.require(:question).permit(:user_id, :text, :answer)
+    else
+      params.require(:question).permit(:user_id, :text)
+    end
   end
 end
