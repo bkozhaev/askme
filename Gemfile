@@ -12,6 +12,8 @@ gem 'rails', '~> 5.1.5'
 
 gem 'jquery-rails'
 
+gem 'rails_12factor'
+
 gem 'uglifier'
 
 group :production do
