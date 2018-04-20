@@ -7,6 +7,14 @@ module ApplicationHelper
     end
   end
 
+  def back_color(user)
+    if user.bg_color.present?
+      user.bg_color
+    else
+      user.bg_color = "#005a55"
+    end
+  end
+
   def fa_icon(icon_class)
     content_tag 'span', '',class: "fa fa-#{icon_class}"
   end
