@@ -17,6 +17,7 @@ class User < ApplicationRecord
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   validates :username, length: { maximum: 40 }
   validates :username, format: { with: /[a-z0-9_]/}
+  validates :bg_color, format: {with: /\A#?(?:[A-F0-9]{3}){1,2}\z/i}
 
   before_save :encrypt_password
   before_validation :do_downcase
