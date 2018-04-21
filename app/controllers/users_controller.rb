@@ -11,6 +11,14 @@ class UsersController < ApplicationController
    @users = User.all
   end
 
+  def destroy
+    current_user.destroy
+    session[:user_id] = nil
+    if @user.destroy
+      redirect_to root_url, notice: 'Вы успешно удалили свой профиль!'
+    end
+  end
+
   def new
     redirect_to root_url, alert: 'Вы уже залогинены' if current_user.present?
     @user = User.new
@@ -27,6 +35,7 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+
 
   def edit
   end
