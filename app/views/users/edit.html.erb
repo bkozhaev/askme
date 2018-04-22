@@ -49,11 +49,11 @@
         </div>
 
         <div class="form-action">
-          <%= f.submit 'Обновить', class: 'form-label' %>
+          <%= f.submit 'Обновить', class: 'form-label button button-green button-small' %>
         </div>
 
-        <div class="form-action">
-          <%= link_to 'Удалить профиль', @user, method: :delete, data: {confirm: "Вы уверены?"} %>
+        <div class="form-action;">
+          <%= link_to 'Удалить профиль', @user, class: "button button-green button-small", method: :delete, data: {confirm: "Вы уверены?"} %>
         </div>
       <% end %>
     </div>

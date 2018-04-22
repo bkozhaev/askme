@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    current_user.destroy
     session[:user_id] = nil
     if @user.destroy
       redirect_to root_url, notice: 'Вы успешно удалили свой профиль!'
