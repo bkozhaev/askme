@@ -16,6 +16,8 @@ gem 'rails_12factor'
 
 gem 'uglifier'
 
+gem 'foundation-rails'
+
 group :production do
   gem 'pg'
 end

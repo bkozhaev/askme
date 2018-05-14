@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   end
 
   def index
-   @users = User.all
+    @users = User.all
+    @questions = Question.all
   end
 
   def destroy
