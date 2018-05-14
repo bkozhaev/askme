@@ -10,8 +10,8 @@ class Question < ApplicationRecord
 
   after_create do
     question = Question.find_by(id: self.id)
-    hashtags = self.text.scan(/#\w+/)
-    hashtags.map do |hashtag|
+    hashtags = self.text.scan(/\B#\w+/)
+    hashtags.uniq.map do |hashtag|
       tag = Tag.find_or_create_by(name: hashtag.downcase.delete('#'))
       question.tags << tag
     end
@@ -20,8 +20,8 @@ class Question < ApplicationRecord
   after_update do
     question = Question.find_by(id: self.id)
     question.tags.clear
-    hashtags = self.text.scan(/#\w+/)
-    hashtags.map do |hashtag|
+    hashtags = self.text.scan(/\B#\w+/)
+    hashtags.uniq.map do |hashtag|
       tag = Tag.find_or_create_by(name: hashtag.downcase.delete('#'))
       question.tags << tag
     end
