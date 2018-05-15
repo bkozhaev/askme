@@ -11,9 +11,9 @@
     </div>
   <% end %>
 
-  <% @questions.each do |question| %>
+  <% @tags.each do |tag| %>
     <div class="user-list-item">
-      <%= render_with_hashtags(question.text) %>
+      <%= render_with_hashtags(tag.name) %>
     </div>
   <% end %>
 </div>
