@@ -10,10 +10,10 @@
       </div>
     </div>
   <% end %>
-
+<div>
+</br>
+</div>
   <% @tags.each do |tag| %>
-    <div class="user-list-item">
       <%= render_with_hashtags(tag.name) %>
-    </div>
   <% end %>
 </div>
