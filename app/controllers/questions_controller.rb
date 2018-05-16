@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :load_question, only: [:edit, :update, :destroy]
-  before_action :authorize_user, except: [:create]
+  before_action :authorize_user, except: [:create, :hashtags]
   # GET /questions/1/edit
   def edit
   end
@@ -16,6 +16,11 @@ class QuestionsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def hashtags
+    tag = Tag.find_by(name: params[:name])
+    @questions = tag.questions
   end
 
   # PATCH/PUT /questions/1
