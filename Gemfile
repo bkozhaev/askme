@@ -18,6 +18,8 @@ gem 'uglifier'
 
 gem 'foundation-rails'
 
+gem 'recaptcha', require: 'recaptcha/rails'
+
 group :production do
   gem 'pg'
 end
