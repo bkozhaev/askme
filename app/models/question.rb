@@ -1,6 +1,4 @@
 class Question < ApplicationRecord
-  attr_accessor :tag_create
-
 
   belongs_to :user
   belongs_to :author, class_name: 'User', optional: true
@@ -14,11 +12,7 @@ class Question < ApplicationRecord
     question_tag_create
   end
 
-  after_update do
-    question_tag_update
-  end
-
-  def check_tag_presence
+  def create_tags_from_answer_and_text
     if self.answer.present?
       self.answer.scan(/#[\p{L}0-9_]{1,55}/)
     else
@@ -27,19 +21,10 @@ class Question < ApplicationRecord
   end
 
   def question_tag_create
-    question = Question.find_by(id: self.id)
-    check_tag_presence.uniq.map do |hashtag|
+    self.tags.clear
+    create_tags_from_answer_and_text.uniq.map do |hashtag|
       tag = Tag.find_or_create_by(name: hashtag.downcase.delete('#'))
-      question.tags << tag
-    end
-  end
-
-  def question_tag_update
-    question = Question.find_by(id: self.id)
-    question.tags.clear
-    check_tag_presence.uniq.map do |hashtag|
-      tag = Tag.find_or_create_by(name: hashtag.downcase.delete('#'))
-      question.tags << tag
+      self.tags << tag
     end
   end
 end
