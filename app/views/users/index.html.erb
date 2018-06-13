@@ -14,6 +14,6 @@
 </br>
 </div>
   <% @tags.each do |tag| %>
-      <%= render_with_hashtags(tag.name) %>
+      <%= render_with_hashtags(tag.name) if tag.questions.present? %>
   <% end %>
 </div>
