@@ -24,6 +24,9 @@
       <% else %>
         anonymous
       <% end %>
+
+      <span class="text-small">&ensp; Вопрос задан пользователю: </span>
+      <%= link_to "#{question.user.username}", user_path(question.user) %>
     </div>
   </div>
 
