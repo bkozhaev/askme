@@ -15,5 +15,7 @@
 
     RECAPTCHA_SITE_KEY
     RECAPTCHA_SECRET_KEY
-### [Демонстрационная версия приложения](https://askinganswer.herokuapp.com/)
-### Автор [Бауржан Кожаев](https://www.linkedin.com/in/baur-kozhaev-80a277162/)
+#### [Демонстрационная версия приложения](https://askinganswer.herokuapp.com/)
+#### Автор 
+[Бауржан Кожаев](https://www.linkedin.com/in/baur-kozhaev-80a277162/)
+* Приложение разработано в учебных целях, и может быть взято за основу серьезного проекта
