@@ -10,7 +10,7 @@
 
 ### Демо
 
-https://megabbq.herokuapp.com
+https://askinganswer.herokuapp.com
 
 ### Установка
 
