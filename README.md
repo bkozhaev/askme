@@ -1,24 +1,26 @@
-# README
+== Спроси меня!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Учебное приложение — организатор событий на rails 4.2.
 
-Things you may want to cover:
+Рассчитано на работу с Heroku.
 
-* Ruby version
+Предназначено для освоения работы с загрузкой файлов, аутентификацией, авторизацией, гемами devise, carrierwave, фреймворком bootstrap.
 
-* System dependencies
+Учит также основам работы с локализацией и YML файлами.
 
-* Configuration
+При желании может быть взято за основу для полезного и серьезного проекта.
 
-* Database creation
+== Демо
 
-* Database initialization
+https://megabbq.herokuapp.com
 
-* How to run the test suite
+== Установка
 
-* Services (job queues, cache servers, search engines, etc.)
+Для разворачивания своей копии клонируйте гит репозиторий (зеленая кнопочка в правом верхнем углу на гитхабе), залейте на свое приложение на Heroku (или создайте новое <code>heroku create</code>). Также поправьте урл сайта в +production.rb+.
 
-* Deployment instructions
+Для работы почты на хероку должен быть подключен SendGrid.
 
-* ...
+== Copyright
+
+«Хороший программист»
+http://goodprogrammer.ru
