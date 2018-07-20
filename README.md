@@ -11,7 +11,7 @@
     bundle install
     rake db:migrate
 
-Для корректной работы reCaptcha
+Для корректной работы reCaptcha необходимо настроить следующие переменные окружения:
 
     RECAPTCHA_SITE_KEY
     RECAPTCHA_SECRET_KEY
