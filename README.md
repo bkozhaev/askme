@@ -8,16 +8,15 @@
 
 ### Установка
 
-Перед запуском приложения необходимо выполнить установку всех необходимых гемов и прогнать миграции базы данных. Для этого в консоли необходимо выполнить команды:
-
     bundle install
     rake db:migrate
 
-Также необходимо настроить переменные окружения для корректной работы reCaptcha:
+Для корректной работы reCaptcha
 
     RECAPTCHA_SITE_KEY
     RECAPTCHA_SECRET_KEY
     
- Рабочий проект расположен на хероку по адресу: [Askinganswer](https://askinganswer.herokuapp.com/)
+### Демонстративная версия
+ [Askinganswer](https://askinganswer.herokuapp.com/)
 ### Автор
  [Бауржан Кожаев](https://www.linkedin.com/in/baur-kozhaev-80a277162/)
