@@ -1,8 +1,6 @@
 ### Спроси меня!
 
-Учебная упрощенная копия приложения [askme.fm](http://askme.fm/) на rails 4.5.
-
-Рассчитано на работу с Heroku.
+Учебная, упрощенная копия приложения [askme.fm](http://askme.fm/)
 
 Предназначено для освоения работы с Ruby on Rails с аутентификацией, авторизацией, фреймворком bootstrap.
 
@@ -21,5 +19,5 @@
     RECAPTCHA_SECRET_KEY
     
  Рабочий проект расположен на хероку по адресу: [Askinganswer](https://askinganswer.herokuapp.com/)
- 
- Автор приложения: [Бауржан Кожаев](https://www.linkedin.com/in/baur-kozhaev-80a277162/)
+### Автор
+ [Бауржан Кожаев](https://www.linkedin.com/in/baur-kozhaev-80a277162/)
